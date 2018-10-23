@@ -1,17 +1,12 @@
-import {ModuleWithProviders, NgModule, Provider} from "@angular/core";
-import {GoogleAuthService} from "./GoogleAuthService";
-import {GoogleApiService} from "./GoogleApiService";
+import { NgModule } from "@angular/core";
+import { GoogleAuthService } from "./GoogleAuthService";
+import { GoogleApiService } from "./GoogleApiService";
 
-@NgModule()
+@NgModule({
+    providers: [
+        GoogleAuthService,
+        GoogleApiService
+    ]
+})
 export class GoogleApiModule {
-    static forRoot(gapiConfigProvider: Provider): ModuleWithProviders {
-        return {
-            ngModule: GoogleApiModule,
-            providers: [
-                gapiConfigProvider,
-                GoogleAuthService,
-                GoogleApiService
-            ]
-        }
-    }
 }

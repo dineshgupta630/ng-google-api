@@ -16,6 +16,10 @@ export class GoogleApiService {
         this.loadGapi().subscribe();
     }
 
+    public onInitialise(configuration:any) {
+        this.config = new GoogleApiConfig(configuration);
+        this.loadGapi().subscribe();
+    }
     public onLoad(): Observable<void> {
         return this.loadGapi();
     }
